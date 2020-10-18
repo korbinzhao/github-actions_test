@@ -22,4 +22,4 @@ jobs:
         uses: github/super-linter@v3
         env:
           DEFAULT_BRANCH: master
-          GITHUB_TOKEN: MY_GITHUB_SERCRET
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
