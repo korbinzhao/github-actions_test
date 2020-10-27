@@ -13,7 +13,6 @@ jobs:
     steps:
       - run: ./sh/build_server.sh
   test:
-    runs-on: ubuntu-latest
     needs: build
     runs-on: ubuntu-latest
     steps:
