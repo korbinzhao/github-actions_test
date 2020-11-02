@@ -30,9 +30,8 @@ jobs:
       # Performs a clean installation of all dependencies in the `package.json` file
       # For more information, see https://docs.npmjs.com/cli/ci.html
       - name: Install dependencies
-        run: echo "process.cwd " + process.cwd
-        run: echo "__dirname " + __dirname
-        run: npm install
+        run: echo "process.cwd " + process.cwd + "__dirname " + __dirname
+        # run: npm install
 
       - name: Connect to Redis
         # Runs a script that creates a Redis client, populates
