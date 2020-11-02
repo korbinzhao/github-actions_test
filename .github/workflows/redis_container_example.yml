@@ -48,3 +48,11 @@ jobs:
           REDIS_HOST: redis
           # The default Redis port
           REDIS_PORT: 6379
+
+      - name: REDIS_HOST
+        run: echo $REDIS_HOST 
+
+      - name: REDIS_PORT
+        run: echo $REDIS_PORT 
+        
+        
