@@ -1,3 +1,4 @@
+name: hello world private action
 on: [push]
 
 jobs:
