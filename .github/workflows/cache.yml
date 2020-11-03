@@ -2,6 +2,8 @@ name: cache action example
 on: [push]
 jobs:
   example-job:
+    runs-on: ubuntu-latest
+    name: cache job
     steps:
       - name: env.cwd
         run: echo ${{ env.cwd }}
