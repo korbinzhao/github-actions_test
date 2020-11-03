@@ -6,7 +6,7 @@ jobs:
     name: cache job
     steps:
       - name: env.cwd
-        run: echo ${{ env.cwd }}
+        run: echo "cwd ${{ env.cwd }}"
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -17,6 +17,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
       - name: ACTIONS_CACHE_URL
-        run: echo ${{ env.ACTIONS_CACHE_URL }}
+        run: echo "cacheUrl ${{ env.ACTIONS_CACHE_URL }}"
       - name: ACTIONS_RUNTIME_URL
-        run: echo ${{ env.ACTIONS_RUNTIME_URL }} 
+        run: echo "runtimeUrl ${{ env.ACTIONS_RUNTIME_URL }}" 
