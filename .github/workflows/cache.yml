@@ -1,0 +1,20 @@
+name: cache action example
+on: [push]
+jobs:
+  example-job:
+    steps:
+      - name: env.cwd
+        run: echo ${{ env.cwd }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+      - name: ACTIONS_CACHE_URL
+        run: echo ${{ env.ACTIONS_CACHE_URL }}
+      - name: ACTIONS_RUNTIME_URL
+        run: echo ${{ env.ACTIONS_RUNTIME_URL }} 
