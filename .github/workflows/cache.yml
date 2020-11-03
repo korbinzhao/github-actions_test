@@ -20,5 +20,7 @@ jobs:
         run: echo "cacheUrl ${{ env.ACTIONS_CACHE_URL }}"
       - name: ACTIONS_RUNTIME_URL
         run: echo "runtimeUrl ${{ env.ACTIONS_RUNTIME_URL }}" 
-      - name: env.cache-name
-        run: echo "env.cache-name ${{ env.cache-name }}"
+      - name: env
+        run: echo "env ${{ toJson(env) }}"
+      - name: os 
+        run: echo "${{ env.os }} ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}"
