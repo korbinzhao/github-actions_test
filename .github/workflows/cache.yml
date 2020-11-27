@@ -24,6 +24,8 @@ jobs:
         run: echo "env ${{ toJson(env) }}"
       - name: os 
         run: echo "${{ runner.os }} ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}"
+      - name: checkout
+        uses: actions/check@v2
       - name: hello
         uses: ./actions/hello
         with: 
