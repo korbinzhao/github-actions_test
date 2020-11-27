@@ -8,6 +8,8 @@ WORKDIR /home/runner/work/github-actions_test/github-actions_test
 # where available (npm@5+)
 # COPY package*.json ./
 
+RUN ls -l
+
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
