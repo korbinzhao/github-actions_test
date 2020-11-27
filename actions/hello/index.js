@@ -2,6 +2,9 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
+
+  console.log('开始执行 start ...');
+
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
@@ -11,5 +14,6 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
 } catch (error) {
+  console.log('出错', error.stack);
   core.setFailed(error.message);
 }
