@@ -25,6 +25,6 @@ jobs:
       - name: os 
         run: echo "${{ runner.os }} ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}"
       - name: hello
-        uses: ./hello
+        uses: ./actions/hello
         with: 
           who-to-greet: Jack
