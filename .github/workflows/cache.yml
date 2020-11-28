@@ -7,24 +7,26 @@ jobs:
     steps:
       - name: env.cwd
         run: echo "cwd ${{ env.cwd }}"
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-      - name: ACTIONS_CACHE_URL
-        run: echo "cacheUrl ${{ env.ACTIONS_CACHE_URL }}"
-      - name: ACTIONS_RUNTIME_URL
-        run: echo "runtimeUrl ${{ env.ACTIONS_RUNTIME_URL }}" 
+      # - name: Cache node modules
+      #   uses: actions/cache@v2
+      #   env:
+      #     cache-name: cache-node-modules
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-build-${{ env.cache-name }}-
+      # - name: ACTIONS_CACHE_URL
+      #   run: echo "cacheUrl ${{ env.ACTIONS_CACHE_URL }}"
+      # - name: ACTIONS_RUNTIME_URL
+      #   run: echo "runtimeUrl ${{ env.ACTIONS_RUNTIME_URL }}" 
       - name: env
         run: echo "env ${{ toJson(env) }}"
       - name: os 
         run: echo "${{ runner.os }} ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}"
-      - name: checkout
-        uses: actions/checkout@v2
+      # - name: checkout
+      #   uses: actions/checkout@v2
       - name: hello
         uses: ./actions/hello
+      - name: hello-js
+        uses: ./actions/hello-js

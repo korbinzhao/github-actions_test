@@ -8,9 +8,11 @@ FROM node:12
 # where available (npm@5+)
 # COPY package*.json ./
 
-RUN ls -l
+# RUN ls -l
 
-RUN npm install
+RUN node -v
+
+# RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
 
