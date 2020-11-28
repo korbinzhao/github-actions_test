@@ -1,7 +1,7 @@
 FROM node:12
 
 # Create app directory
-WORKDIR /home/runner/work/github-actions_test/github-actions_test
+# WORKDIR /home/runner/work/github-actions_test/github-actions_test
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
