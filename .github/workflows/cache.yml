@@ -6,7 +6,7 @@ jobs:
     name: cache job
     steps:
       - name: env.cwd
-        run: echo "cwd ${{ env.cwd }}"
+        run: echo cwd ${{ env.cwd }}
       # - name: Cache node modules
       #   uses: actions/cache@v2
       #   env:
@@ -24,8 +24,8 @@ jobs:
         run: echo "env ${{ toJson(env) }}"
       - name: os 
         run: echo "${{ runner.os }} ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}"
-      # - name: checkout
-      #   uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
       - name: hello
         uses: ./actions/hello
       - name: hello-js
