@@ -1,0 +1,25 @@
+name: sequential
+
+# Run this workflow every time a new commit pushed to your repository
+on: push
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "setup starting"
+      - run: sleep 10
+      - run: echo "setup end"
+  build:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - run: echo "build starting"
+      - run: sleep 10
+      - run: echo "build end"
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "test starting"
+      - run: sleep 10
+      - run: echo "test end"
