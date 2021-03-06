@@ -3,6 +3,18 @@ name: sequential
 # Run this workflow every time a new commit pushed to your repository
 on: push
 jobs:
+  prepare1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "setup starting"
+      - run: sleep 10
+      - run: echo "setup end"
+  prepare2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "setup starting"
+      - run: sleep 10
+      - run: echo "setup end"
   setup:
     runs-on: ubuntu-latest
     steps:
