@@ -15,8 +15,16 @@ jobs:
       - run: echo "setup starting"
       - run: sleep 10
       - run: echo "setup end"
+  prepare3:
+    runs-on: ubuntu-latest
+    needs: prepare2
+    steps:
+      - run: echo "setup starting"
+      - run: sleep 10
+      - run: echo "setup end"
   setup:
     runs-on: ubuntu-latest
+    needs: prepare3
     steps:
       - run: echo "setup starting"
       - run: sleep 10
